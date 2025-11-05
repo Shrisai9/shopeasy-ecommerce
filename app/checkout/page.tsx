@@ -70,7 +70,8 @@ export default function Checkout() {
 
     // Create order
     const order = {
-      id: Date.now(),
+      // ✅ This is correct - converts to string
+      id: Date.now().toString(),
       date: new Date().toISOString(),
       items: items.map(item => ({
         id: item.id,
@@ -250,4 +251,5 @@ export default function Checkout() {
       </div>
     </main>
   )
+
 }
